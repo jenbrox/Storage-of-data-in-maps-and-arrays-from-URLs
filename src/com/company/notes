@@ -1,0 +1,34 @@
+THis program does not want to be short or reusable.
+-----------
+        //populate the maps
+        try {
+            createMaps(2001, year2001, xy2001, xx2001);
+        } catch (Exception e) {
+            System.out.println("One of the scanners were not initialized.");
+        } finally {
+            createMaps(2001, year2001, xy2001, xx2001); }
+-----------
+                    //read from the URLs
+
+                            Scanner input2001 = null;
+                            Scanner input2002 = null;
+                            Scanner input2003 = null;
+                            Scanner input2004 = null;
+                            Scanner input2005 = null;
+                            Scanner input2006 = null;
+                            Scanner input2007 = null;
+                            Scanner input2008 = null;
+                            Scanner input2009 = null;
+                            Scanner input2010 = null;
+
+                    for(int y = 2001; y <= 2010; y++) {
+                        try {
+                            Scanner input = new Scanner(new URL("http://www.cs.armstrong.edu/liang/data/babynamesranking" + y + ".txt").openStream());
+
+
+
+                        } catch (Exception e) {
+                            System.out.println("There was an error");
+                        }
+                    }
+-------------
