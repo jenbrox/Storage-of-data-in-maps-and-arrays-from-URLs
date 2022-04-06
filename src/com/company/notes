@@ -31,4 +31,48 @@ THis program does not want to be short or reusable.
                             System.out.println("There was an error");
                         }
                     }
--------------
+-------------populate the maps----
+        String boyName = "";
+        Integer boyRanking;
+        String girlName = "";
+        Integer girlRanking;
+
+        while (input.hasNextLine())
+
+            boyName = input.nextLine().split("\t")[1];
+            boyRanking =
+            //boyRanking = Integer.parseInt(input.nextLine().split("\t")[2]);
+            xy.put(boyName, boyRanking);
+            girlName = input.nextLine().split("\t")[3];
+            girlRanking = Integer.parseInt(input.nextLine().split("\t")[4]);
+            xx.put(girlName, girlRanking);
+
+--------tried to shorten creating the maps to no avail-------
+        //test
+        String xxMapName = "xx";
+        String xyMapName = "xy";
+        int yearNum = 2001;
+        for (int i = 2001; i <= 2010; i++) {
+            yearNum = i;
+            xyMapName = "xx" + yearNum;
+            xxMapName = "xy" + yearNum;
+            Map<String, Integer> xxMapName = new LinkedHashMap<String, Integer>(); //error: Variable 'xxMapName' is already defined in the scope
+            Map<String, Integer> xyMapName = new LinkedHashMap<String, Integer>();
+
+        }
+---this is trash i guess----
+        Scanner userChoice = new Scanner(System.in);
+        System.out.println("Would you like to access information about a name? [Y/N]: ");
+        String choice = userChoice.nextLine();
+        while (choice.equalsIgnoreCase("Y")) { //so you can test further
+            System.out.print("Enter a year from 2001 through 2010, inclusively ('YYYY'): ");
+            year = userChoice.nextInt();
+            System.out.print("Enter a gender (M/F): ");
+            gender = userChoice.next();
+            userChoice.nextLine();
+            System.out.print("Enter a name to search: ");
+            name = userChoice.nextLine();
+            System.out.println("The name " + name + " held the rank of " + rank + " in the year " + year + ".");
+            System.out.println("Would you like to access information about a name? [Y/N]: ");
+            choice = userChoice.nextLine();
+        }
