@@ -1,16 +1,31 @@
 // Jennifer Broxson
 // C00278444
 // CMPS 261
-// Program Description: ----------------------
+// Program Description: This project demonstrates the use of JavaDocs, reading from a URL, and Maps.
 //I certify that the code in the method functions including method function main of this project are entirely my own work.
 
 package com.company;
+
+/**
+ * @author C00278444
+ * @version 1.0
+ * @since 2022-04-05
+ * <p>
+ * This project demonstrates the use of JavaDocs, reading from a URL, and Maps.
+ */
 
 import java.util.*;
 import java.net.*;
 import java.io.*;
 
 public class Main {
+
+    /**
+     *
+     * @param args - this describes the method parameter
+     * @throws IOException - allows me to read the URLs outside of a try/catch block for ease
+     * <p> The main function does the bulk of the work. I wished to do more of the work outside, but I came across too many errors.
+     */
 
     public static void main(String[] args) throws IOException {
 
@@ -174,6 +189,15 @@ public class Main {
         System.out.println("The name " + name + " held the rank of " + rank + " in the year " + year + ".");
 
         }
+
+    /**
+     *
+     * @param input - read from URLs
+     * @param xy - send in each boy Map
+     * @param xx - send in each girl Map
+     * <p> This method populates each of the Maps
+     */
+
 
     public static void populateMaps(Scanner input, Map xy, Map xx){
 
