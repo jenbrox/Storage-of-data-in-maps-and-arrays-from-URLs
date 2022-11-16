@@ -29,7 +29,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 
-        //create Maps
+        //create Maps for each gender and year
         Map<String, Integer> xy2001 = new LinkedHashMap<String, Integer>();
         Map<String, Integer> xx2001 = new LinkedHashMap<String, Integer>();
         Map<String, Integer> xy2002 = new LinkedHashMap<String, Integer>();
@@ -51,7 +51,7 @@ public class Main {
         Map<String, Integer> xy2010 = new LinkedHashMap<String, Integer>();
         Map<String, Integer> xx2010 = new LinkedHashMap<String, Integer>();
 
-        //read from the URLs
+        //read ddata from the URLs
         Scanner input2001 = new Scanner(new URL("http://liveexample.pearsoncmg.com/data/babynameranking2001.txt").openStream());
         Scanner input2002 = new Scanner(new URL("http://liveexample.pearsoncmg.com/data/babynamesranking2002.txt").openStream());
         Scanner input2003 = new Scanner(new URL("http://liveexample.pearsoncmg.com/data/babynamesranking2003.txt").openStream());
@@ -63,7 +63,7 @@ public class Main {
         Scanner input2009 = new Scanner(new URL("http://liveexample.pearsoncmg.com/data/babynamesranking2009.txt").openStream());
         Scanner input2010 = new Scanner(new URL("http://liveexample.pearsoncmg.com/data/babynamesranking2010.txt").openStream());
 
-        //populate the map arrays
+        //populate the map arrays by calling said function and providing the URL scanner, boy Year map, and girl Year map
         populateMaps(input2001, xy2001, xx2001);
         populateMaps(input2002, xy2002, xx2002);
         populateMaps(input2003, xy2003, xx2003);
@@ -75,7 +75,7 @@ public class Main {
         populateMaps(input2009, xy2009, xx2009);
         populateMaps(input2010, xy2010, xx2010);
 
-        //Creating two arrays //do I want this as Map Arrays
+        //Creating two map arrays containing each gender in order to more easily search with requested user input
         Map[] xxArray = {xy2001, xy2002, xy2003, xy2004, xy2005, xy2006, xy2007, xy2008, xy2009, xy2010};
         Map[] xyArray = {xx2001, xx2002, xx2003, xx2004, xx2005, xx2006, xx2007, xx2008, xx2009, xx2010};
 
@@ -91,7 +91,9 @@ public class Main {
 
 
         Object rank = -99;
-        //maybe I could have declared int variables for the year and index and incremented throughout
+        
+        //nested switch statement
+        //maybe I could have declared int variables for the year and index and incremented throughout, no difference in time complexity, but would have been better if I wanted to add years later
         switch (year){
             case 2001:
                 switch (gender){
@@ -197,7 +199,6 @@ public class Main {
      * @param xx - send in each girl Map
      * <p> This method populates each of the Maps
      */
-
 
     public static void populateMaps(Scanner input, Map xy, Map xx){
 
